@@ -493,6 +493,13 @@ ninja.data = [{
           window.open("mailto:%79%75%74%75%6E%67%6C%69%75%30%39%31%30@%67%6D%61%69%6C.%63%6F%6D", "_blank");
         },
       },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/yt-tony-liu", "_blank");
+        },
+      },{
         id: 'social-ieee',
         title: 'IEEE Xplore',
         section: 'Socials',
@@ -514,18 +521,11 @@ ninja.data = [{
           window.open("https://orcid.org/0009-0003-8788-9104", "_blank");
         },
       },{
-        id: 'social-rss',
-        title: 'RSS Feed',
-        section: 'Socials',
-        handler: () => {
-          window.open("/feed.xml", "_blank");
-        },
-      },{
         id: 'social-scholar',
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+          window.open("https://scholar.google.com/citations?user=7NK7dkMAAAAJ", "_blank");
         },
       },{
       id: 'light-theme',
