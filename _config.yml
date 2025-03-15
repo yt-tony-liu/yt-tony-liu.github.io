@@ -2,10 +2,10 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: YT Liu # the website title (if blank, full name will be used instead)
+title: Yu-Tung Liu # the website title (if blank, full name will be used instead)
 first_name: Yu-Tung
 middle_name: 
-last_name: Liu 劉宇桐 (Tony)
+last_name: Liu
 contact_note: >
   # You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
