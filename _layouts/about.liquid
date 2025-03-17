@@ -21,12 +21,14 @@ layout: default
         
 
         <div class="col-sm-9">
-          {% if site.title == 'blank' %}
-            <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-            {{ site.last_name }}
-          {% else %}
-            {{ site.title }}
-          {% endif %} (劉宇桐)           
+          <h1 class="post-title">
+            {% if site.title == 'blank' %}
+              <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+              {{ site.last_name }}
+            {% else %}
+              {{ site.title }}
+            {% endif %} (劉宇桐) 
+          </h1>          
           <p class="desc">
             {{ page.subtitle }}
           </p>  
