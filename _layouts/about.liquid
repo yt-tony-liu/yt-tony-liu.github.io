@@ -11,7 +11,7 @@ layout: default
         {{ site.title }}
       {% endif %} (劉宇桐) (Site under construction)
     </h1>
-    <p class="desc">{{ page.subtitle }}</p>
+    {% comment %} <p class="desc">{{ page.subtitle }}</p> {% endcomment %}
   </header> 
 
   <article>
@@ -49,7 +49,7 @@ layout: default
             {% else %}
               {{ site.title }}
             {% endif %} (劉宇桐 Tony) (Site under construction)
-          </h1> {% endcomment %}
+          </h1> 
           <p class="desc">{{ page.subtitle }}</p>
           {% if page.profile.more_info %}
             <div class="more-info">{{ page.profile.more_info }}</div>
@@ -87,7 +87,7 @@ layout: default
         {% endif %}
       </div>
     {% endif %}
-
+    <p class="desc">{{ page.subtitle }}</p>
     <div class="clearfix">{{ content }}</div>
 
     <!-- News -->
