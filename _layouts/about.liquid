@@ -11,13 +11,13 @@ layout: default
         {{ site.title }}
       {% endif %} (劉宇桐) (Site under construction)
     </h1>
-    <p class="desc">{{ page.subtitle }}</p>
+    {% comment %} <p class="desc">{{ page.subtitle }}</p> {% endcomment %}
   </header> 
 
   <article>
     {% if page.profile %}
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-3">
           {% if page.profile %}
             <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
               {% if page.profile.image %}
