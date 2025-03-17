@@ -4,22 +4,22 @@ layout: default
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">
-      {% comment %} {% if site.title == 'blank' %}
+      (Site under construction)
+    </h1>
+    <h1 class="post-title">
+      {% if site.title == 'blank' %}
         <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
         {{ site.last_name }}
       {% else %}
         {{ site.title }}
-      {% endif %} (劉宇桐)  {% endcomment %}
-      (Site under construction)
+      {% endif %} (劉宇桐)
     </h1>
-    {% comment %} <p class="desc">{{ page.subtitle }}</p> {% endcomment %}
+    <p class="desc">{{ page.subtitle }}</p>
   </header> 
 
   <article>
-    {% if page.profile %}
+    {% comment %} {% if page.profile %}
       <div class="row">   
-        
-
         <div class="col-sm-9">
           <h1 class="post-title">
             {% if site.title == 'blank' %}
@@ -62,13 +62,12 @@ layout: default
             cache_bust=true 
             %}
           {% endif %}
-        </div>                             
-                              
+        </div>                                            
       </div>
-    {% endif %}
+    {% endif %} {% endcomment %}
 
 
-    {% comment %} {% if page.profile %}
+    {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
@@ -88,9 +87,16 @@ layout: default
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
+        {% if page.social %}
+          <div class="social">
+            <div class="contact-icons">{% include social.liquid %}</div>
+    
+            <div class="contact-note">{{ site.contact_note }}</div>
+          </div>
+        {% endif %}
       </div>
     {% endif %}
-    <p class="clearfix">{{ page.subtitle }}</p> {% endcomment %}
+    {% comment %} <p class="clearfix">{{ page.subtitle }}</p>  {% endcomment %}
     <div class="clearfix">{{ content }}</div>
 
     <!-- News -->

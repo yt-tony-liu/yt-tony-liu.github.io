@@ -3,10 +3,10 @@ layout: about
 title: about
 permalink: /
 subtitle: |+
-  Research Assistant,<br>
-  <a href="https://www.citi.sinica.edu.tw/main">Research Center for Information Technology Innovation</a>,<br>
-  Academia Sinica,<br>
-  Taipei, Taiwan<br>
+  Research Assistant,
+  <a href="https://www.citi.sinica.edu.tw/main">Research Center for Information Technology Innovation</a>,
+  Academia Sinica,
+  Taipei, Taiwan
 
 profile:
   align: right
@@ -30,4 +30,4 @@ latest_posts:
 
 **Research:**  My research interests focus on integrated circuit design, particularly in machine learning accelerators and hardware/software co-design. Next-generation computing hardware must deliver the remarkable capabilities of large AI models while maintaining energy efficiency. Thus, my current development goal is to create a domain-specific computing system to scale up productive and effective neural networks. Motivated by this vision, I have built a solid foundation through my research experience in related fields and the extensive skills acquired from graduate-level courses.
 
-**Education:**  I received my Bachelor's degree in Electronics and Electrical Engineering from National Yang Ming Chiao Tung University (NYCU) , previously known as National Chiao Tung University, where I worked with Prof. Hung-Ming Chen and Prof. Juinn-Dar Huang. I studied efficient algorithms for biomedical processing during my internship at Academia Sinica, where I worked with Prof. Yu Tsao.
+**Education:**  I received my Bachelor's degree in Electronics and Electrical Engineering from National Yang Ming Chiao Tung University (NYCU), previously known as National Chiao Tung University, where I worked with Prof. Hung-Ming Chen and Prof. Juinn-Dar Huang. I studied efficient algorithms for biomedical processing during my internship at Academia Sinica, where I worked with Prof. Yu Tsao.
