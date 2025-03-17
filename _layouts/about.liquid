@@ -91,15 +91,18 @@ layout: default
       </div>
     {% endif %}
     {% comment %} <p class="clearfix">{{ page.subtitle }}</p>  {% endcomment %}
-    <div class="clearfix">{{ content }}</div>
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
+    <div class="clearfix">
+      {{ content }}
+      <!-- Social -->
+      {% if page.social %}
+        <div class="social">
+          <div class="contact-icons">{% include social.liquid %}</div>
 
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
+          <div class="contact-note">{{ site.contact_note }}</div>
+        </div>
+      {% endif %}
+    </div>
+    
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
