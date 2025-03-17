@@ -11,11 +11,11 @@ layout: default
         {{ site.title }}
       {% endif %} (劉宇桐) (Site under construction)
     </h1>
-    {% comment %} <p class="desc">{{ page.subtitle }}</p> {% endcomment %}
+    <p class="desc">{{ page.subtitle }}</p>
   </header> 
 
   <article>
-    {% if page.profile %}
+    {% comment %} {% if page.profile %}
       <div class="row">
         <div class="col-lg-4">
           {% if page.profile %}
@@ -63,9 +63,9 @@ layout: default
           {% endif %}
         </div>
       </div>
-    {% endif %}
+    {% endif %} {% endcomment %}
 
-    {% comment %} {% if page.profile %}
+    {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
@@ -86,7 +86,7 @@ layout: default
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
       </div>
-    {% endif %} {% endcomment %}
+    {% endif %}
 
     <div class="clearfix">{{ content }}</div>
 
