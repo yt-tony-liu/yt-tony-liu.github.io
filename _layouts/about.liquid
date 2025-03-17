@@ -15,57 +15,46 @@ layout: default
   </header> 
 
   <article>
-    {% comment %} {% if page.profile %}
-      <div class="row">
-        <div class="col-lg-4">
-          {% if page.profile %}
-            <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-              {% if page.profile.image %}
-                {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-                {% if page.profile.image_circular %}
-                  {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-                {% else %}
-                  {% assign profile_image_class = 'img-fluid z-depth-1
-            rounded' %}
-                {% endif %}
-                {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-                30vw, 95vw"{% endcapture %}
-                {%
-                  include figure.liquid loading="eager" path=profile_image_path class=profile_image_class size=size alt=page.profile.image
-                  cache_bust=true
-                %}
-              {% endif %}
-              {% if page.profile.more_info %}
-                <div class="more-info">{{ page.profile.more_info }}</div>
-              {% endif %}
-            </div>
-          {% endif %}
-        </div>
-        <div class="col-lg-8">
-          <h1 class="post-title">
-            {% if site.title == 'blank' %}
-              <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-              {{ site.last_name }}
-            {% else %}
-              {{ site.title }}
-            {% endif %} (劉宇桐 Tony) (Site under construction)
-          </h1> 
-          <p class="desc">{{ page.subtitle }}</p>
-          {% if page.profile.more_info %}
-            <div class="more-info">{{ page.profile.more_info }}</div>
-          {% endif %}
-          {% if page.social %}
-            <div class="social">
-              <div class="contact-icons">{% include social.liquid %}</div>
-      
-              <div class="contact-note">{{ site.contact_note }}</div>
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    {% endif %}  {% endcomment %}
-
     {% if page.profile %}
+      <div class="row">       
+        <div class="col-sm-9">          
+          <p class="desc">{{ page.subtitle }}</p>  
+          {% if page.profile.address %}
+          <div class="address">
+            {{ page.profile.address }}              
+          </div>
+          {% endif %}            
+          {% if page.social %}
+            <!-- Social -->
+            <div class="social">
+              <div class="contact-icons"> {% include social.liquid %} </div>    
+            </div>
+          {% endif %}    
+      </div>  
+
+        <div class="col-sm-3">
+          {% if page.profile.image %}
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+
+            {% if page.profile.image_cicular %}
+              {% assign profile_image_class = "img-fluid z-depth-1 rounded-circle" %}
+            {% else %}
+              {% assign profile_image_class = "img-fluid z-depth-1 rounded" %}
+            {% endif %}
+
+            {% include 
+            figure.liquid loading="eager" path=profile_image_path class=profile_image_class alt=page.profile.image
+            cache_bust=true 
+            %}
+          {% endif %}
+        </div>                                   
+        
+                               
+      </div>
+    {% endif %}
+
+
+    {% comment %} {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
@@ -87,7 +76,7 @@ layout: default
         {% endif %}
       </div>
     {% endif %}
-    <p class="desc">{{ page.subtitle }}</p>
+    <p class="clearfix">{{ page.subtitle }}</p> {% endcomment %}
     <div class="clearfix">{{ content }}</div>
 
     <!-- News -->
