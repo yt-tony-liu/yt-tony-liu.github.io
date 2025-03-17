@@ -6,7 +6,8 @@ subtitle: |+
   Research Assistant,<br>
   <a href="https://www.citi.sinica.edu.tw/main">Research Center for Information Technology Innovation</a>,<br>
   Academia Sinica,<br>
-  Taipei, Taiwan
+  Taipei, Taiwan<br><br>
+  Received bachelor's degree in Electrical and Computer Engineering from National Yang Ming Chiao Tung University, Hsinchu, Taiwan.<br>
 
 profile:
   align: right
