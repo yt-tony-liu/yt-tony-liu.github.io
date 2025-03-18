@@ -4,21 +4,21 @@
     "label": "Scientist",
     "image": "",
     "email": "yutungliu0910@gmail.com",
-    "phone": "(886) 921-794-562",
-    "url": "https://yt-tony-liu.github.io/",
+    "phone": "",
+    "url": "https://yt-tony-liu.com",
     "summary": "", 
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "",
-      "countryCode": "US",
-      "region": "California"
+      "city": "Taipei",
+      "countryCode": "TW",
+      "region": ""
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "",
+        "username": "",
+        "url": ""
       }
     ]
   },
