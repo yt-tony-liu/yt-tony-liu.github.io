@@ -24,6 +24,13 @@
   },
   "work": [
     {
+      "name": "Research Center for Information Technology Innovation, Academia Sinica",
+      "position": "Research Assistant",
+      "startDate": "November 2024",
+      "endDate": "Present",
+      "summary": "Hosted by Dr. Yu Tsao. Introduced a generative method and a state space model to surface electromyography denoising framework - both methods generated denoised signals of 4% and 14% higher quality respectively compared to the previous method"
+    },
+    {
       "name": "Institute for Advanced Study, Princeton University",
       "position": "Professor of Theoretical Physics",
       "url": "https://example.com",
