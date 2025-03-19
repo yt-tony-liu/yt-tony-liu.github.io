@@ -380,11 +380,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-our-work-was-accepted-at-icassp-2025",
-          title: 'Our work was accepted at ICASSP 2025!',
+            },},{id: "news-our-msemg-paper-was-accepted-at-icassp-2025",
+          title: 'Our MSEMG paper was accepted at ICASSP 2025!',
           description: "",
-          section: "News",},{id: "news-our-work-was-accepted-at-tcad",
-          title: 'Our work was accepted at TCAD!',
+          section: "News",},{id: "news-our-collaborative-work-with-prof-c-c-jay-kuo-s-group-from-usc-was-accepted-by-tcad",
+          title: 'Our collaborative work with Prof. C.-C. Jay Kuo’s group from USC was accepted...',
           description: "",
           section: "News",},{id: "news-i-will-be-attending-icassp-2025",
           title: 'I will be attending ICASSP 2025!',
