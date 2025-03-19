@@ -8,6 +8,8 @@
   booktitle={ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
   year={2024},
   pdf={https://ieeexplore.ieee.org/abstract/document/10446154},
+  abstract={Surface electromyography (sEMG) recordings can be influenced by electrocardiogram (ECG) signals when the muscle being monitored is close to the heart. Several existing methods use signal-processing-based approaches, such as high-pass filter and template subtraction, while some derive mapping functions to restore clean sEMG signals from noisy sEMG (sEMG with ECG interference). Recently, the score-based diffusion model, a renowned generative model, has been introduced to generate high-quality and accurate samples with noisy input data. In this study, we proposed a novel approach, termed SDEMG, as a score-based diffusion model for sEMG signal denoising. To evaluate the proposed SDEMG approach, we conduct experiments to reduce noise in sEMG signals, employing data from an openly accessible source, the Non-Invasive Adaptive Prosthetics database, along with ECG signals from the MIT-BIH Normal Sinus Rhythm Database. The experiment result indicates that SDEMG outperformed comparative methods and produced high-quality sEMG samples. The source code of SDEMG the framework is available at: https://github.com/tonyliu0910/SDEMG},
+  poster={ICASSP2024/ICASSP2024_SDEMG_poster.pdf},
   selected={true}
 }
 
@@ -18,6 +20,8 @@
   booktitle={IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2024},
   year={2024},
   pdf={https://arxiv.org/abs/2502.12168},
+  abstract={IR drop estimation is now considered a first-order metric due to the concern about reliability and performance in modern electronic products. Since traditional solution involves lengthy iteration and simulation flow, how to achieve fast yet accurate estimation has become an essential demand. In this work, with the help of modern AI acceleration techniques, we propose a comprehensive solution to combine both the advantages of image-based and netlist-based features in neural network framework and obtain high-quality IR drop prediction very effectively in modern designs. A customized convolutional neural network (CNN) is developed to extract PDN features and make static IR drop estimations. Trained and evaluated with the open-source dataset, experiment results show that we have obtained the best quality in the benchmark on the problem of IR drop estimation in ICCAD CAD Contest 2023, proving the effectiveness of this important design topic.},
+  slides={ICCAD2024/CFIRSTNET_oral_presentation.pdf},
   selected={true}
 }
 
@@ -30,6 +34,7 @@
   year={2025},
   organization={IEEE},
   pdf={https://ieeexplore.ieee.org/abstract/document/10887547},
+  abstract={Surface electromyography (sEMG) recordings can be contaminated by electrocardiogram (ECG) signals when the monitored muscle is closed to the heart. Traditional signal processing-based approaches, such as high-pass filtering and template subtraction, have been used to remove ECG interference but are often limited in their effectiveness. Recently, neural network-based methods have shown greater promise for sEMG denoising, but they still struggle to balance both efficiency and effectiveness. In this study, we introduce MSEMG, a novel system that integrates the Mamba state space model with a convolutional neural network to serve as a lightweight sEMG denoising model. We evaluated MSEMG using sEMG data from the Non-Invasive Adaptive Prosthetics database and ECG signals from the MIT-BIH Normal Sinus Rhythm Database. The results show that MSEMG outperforms existing methods, generating higher-quality sEMG signals using fewer parameters.},
   selected={true}
 }
 
@@ -41,6 +46,7 @@
   year={2025},
   publisher={IEEE},
   pdf={https://ieeexplore.ieee.org/abstract/document/10852017},
+  abstract={An energy-efficient high-performance static IR-drop estimation method based on green learning called GIRD (Green IR Drop) is proposed in this work. GIRD processes the IC design input in three steps. First, the input netlist data are converted to multi-channel maps. Their joint spatial-spectral representations are determined with PixelHop. Next, discriminant features are selected using the relevant feature test (RFT). Finally, the selected features are fed to the XGBoost (eXtreme Gradient Boosting trees) regressor. Both PixelHop and RFT are green learning tools. GIRD yields a low carbon footprint due to its smaller model sizes and lower computational complexity. Besides, its performance scales well with small training datasets. Experiments on synthetic and real circuits are given to demonstrate the superior performance of GIRD. The model size and the complexity, measured by the Floating Point Operations (FLOPs), of GIRD are only 10-3 and 10-2 of deep-learning methods, respectively.},
   selected={true}
 }
 
