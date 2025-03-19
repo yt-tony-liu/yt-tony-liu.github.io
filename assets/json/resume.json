@@ -102,23 +102,21 @@
       "awarder": "NYCU Electrical Engineering Project"
     }
   ],
-
   "Leadership and Extracurricular Activities": [
     {
-      "organization": "Student Association",
+      "name": "Student Association",
       "position": "Student Activities Director",
       "startDate": "2022-09",
       "endDate": "2023-06",
       "summary": "Integrated planning of numerous student events to cultivate strong relationships among members"
     },
     {
-      "organization": "Tutoring",
+      "position": "Tutoring",
       "startDate": "2020-09",
       "endDate": "2023-06",
       "summary": "Developed and implemented customized learning strategies for junior and senior high school students on math, physics, and chemistry"
     }
   ],
-
   "volunteer": [
     {
       "organization": "Formosa Budding Hope Association",
