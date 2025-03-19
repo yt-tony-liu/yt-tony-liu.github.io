@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our [work](https://ieeexplore.ieee.org/abstract/document/10852017) was accepted at TCAD!
+Our collaborative [work](https://ieeexplore.ieee.org/abstract/document/10852017) with Prof. C.-C. Jay Kuo's group from USC was accepted by TCAD!

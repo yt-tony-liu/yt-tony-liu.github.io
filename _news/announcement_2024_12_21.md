@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our [work](https://ieeexplore.ieee.org/abstract/document/10887547) was accepted at ICASSP 2025!
+Our [MSEMG](https://ieeexplore.ieee.org/abstract/document/10887547) paper was accepted at ICASSP 2025!
