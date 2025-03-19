@@ -630,6 +630,7 @@ jsonresume:
   - basics
   - work
   - education
+  - experience
   - publications
   - projects
   - volunteer
@@ -639,3 +640,4 @@ jsonresume:
   - languages
   - interests
   - references
+  - Leadership and Extracurricular Activities
