@@ -3,9 +3,9 @@
     "name": "Yu-Tung Liu",
     "label": "",
     "image": "",
-    "email": "yutungliu0910 AT gmail dot com",
+    "email": "yutungliu0910 AT gmail DOT com",
     "phone": "",
-    "url": "https://yt-tony-liu.com",
+    "url": "",
     "summary": "", 
     "location": {
       "address": "",
@@ -70,7 +70,6 @@
       "summary": "Hosted by Prof. Juinn-Dar Huang."
     }
   ],
-
   "awards": [
     {
       "title": "Chih-Tung Yin Electronics Laboratory Scholarship",
