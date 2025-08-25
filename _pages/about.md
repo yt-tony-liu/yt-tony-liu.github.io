@@ -3,11 +3,8 @@ layout: about
 title: about
 permalink: /
 subtitle: |+
-  Research Assistant,
-  <a href="https://www.citi.sinica.edu.tw/main">Research Center for Information Technology Innovation</a>,
-  Academia Sinica,
-  Taipei, Taiwan
-
+  PhD Student in Computer Engineering,
+  University of Maryland, College Park
 profile:
   align: right
   image: prof_pic.jpg
