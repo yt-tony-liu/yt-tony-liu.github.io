@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-With great honor, I served as a session chair for the **ICASSP 2025**!
+With great honor, I served as a session chair at the **ICASSP 2025**!
