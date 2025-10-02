@@ -3,7 +3,7 @@
     "name": "Yu-Tung Liu",
     "label": "",
     "image": "",
-    "email": "tonyliu AT citi DOT sinica DOT edu DOT tw",
+    "email": "liuyt (at) umd (dot) edu",
     "phone": "",
     "url": "",
     "summary": "", 
@@ -24,6 +24,15 @@
   },
   "education": [
     {
+      "institution": "University of Maryland, College Park",
+      "location": "United States",
+      "url": "https://dee.nycu.edu.tw/?locale=en",
+      "area": "Computer Engineering",
+      "studyType": "Doctor of Philosophy",
+      "startDate": "2025-09",
+      "endDate": "Present"
+    },
+    {
       "institution": "National Yang Ming Chiao Tung University",
       "location": "Hsinchu, Taiwan",
       "url": "https://dee.nycu.edu.tw/?locale=en",
@@ -35,10 +44,17 @@
   ],
   "experience": [
     {
+      "name": "University of Maryland, College Park",
+      "position": "Graduate Research Assistant",
+      "startDate": "2025-09",
+      "endDate": "",
+      "summary": "Hosted by Prof. Cunxi Yu."
+    },
+    {
       "name": "Research Center for Information Technology Innovation, Academia Sinica",
       "position": "Research Assistant",
       "startDate": "2024-11",
-      "endDate": "",
+      "endDate": "2025-07",
       "summary": "Hosted by Dr. Yu Tsao."
     },
     {
@@ -71,6 +87,11 @@
     }
   ],
   "awards": [
+    {
+      "title": "Dean's Fellowship",
+      "date": "2025-09",
+      "awarder": "Univiersity of Maryland, College Park"
+    },
     {
       "title": "Chih-Tung Yin Electronics Laboratory Scholarship",
       "date": "2024-06",
