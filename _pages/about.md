@@ -25,6 +25,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-**Research:**  I am a first-year PhD student at University of Maryland, College Park, under the supervision of Prof. [Prof. Cunxi Yu](https://ycunxi.github.io/cunxiyu/index.html#about). My research focus on electronic design automation (EDA), particularly in hardware/software co-design, diffrentiable EDA, and formal methods. Currently, I am working on hybrid diffractive optical neural network (DONN) and end-to-end synthesis. 
+**Research:**  I am a first-year PhD student at University of Maryland, College Park, under the supervision of [Prof. Cunxi Yu](https://ycunxi.github.io/cunxiyu/index.html#about). My research focus on electronic design automation (EDA), particularly in Intelligent hardware design, hardware/software co-design, and diffrentiable EDA
 
 **Education:**  I obtained my Bachelor's degree in Electronics and Electrical Engineering from National Yang Ming Chiao Tung University (NYCU), previously known as National Chiao Tung University (NCTU), where I worked with [Prof. Hung-Ming Chen](https://vdalab.web.nycu.edu.tw/advisor/) and [Prof. Juinn-Dar Huang](https://sites.google.com/view/adarlab/professor?authuser=0). I was a research intern at [Academia Sinica](https://www.sinica.edu.tw/en), where I worked on efficient learning algorithms for biomedical signal processing with [Dr. Yu Tsao](https://homepage.citi.sinica.edu.tw/pages/yu.tsao/contact_en.html).
