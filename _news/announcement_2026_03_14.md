@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-[Abstracted](https://www.dailyabstracted.app) is online! Feel free to play with it.
+Launched [Abstracted](https://www.dailyabstracted.app), a free PWA that curates personalized daily research feeds from arXiv! Feel free to play with it.
