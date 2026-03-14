@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Abstracted
-description: a project that redirects to another website
-img: assets/img/7.jpg
+description: A useful research tool hopefully free researchers from piles of google scholar alert.
+img: assets/img/simplified-icon-192.png
 redirect: https://www.dailyabstracted.app
 importance: 1
 category: fun
