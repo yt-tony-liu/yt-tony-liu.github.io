@@ -396,12 +396,12 @@ ninja.data = [{
           section: "News",},{id: "news-i-will-be-presnting-a-poster-at-nsf-workshop-on-agents-for-chip-design-automation",
           title: 'I will be presnting a poster at NSF Workshop on Agents for Chip...',
           description: "",
-          section: "News",},{id: "news-launched-abstracted-a-free-pwa-that-curates-personalized-daily-research-feeds-from-arxiv-feel-free-to-play-with-it",
-          title: 'Launched Abstracted, a free PWA that curates personalized daily research feeds from arXiv!...',
+          section: "News",},{id: "news-launched-abstracted-a-free-pwa-for-researchers-feel-free-to-play-with-it",
+          title: 'Launched Abstracted, a free PWA for researchers! Feel free to play with it....',
           description: "",
           section: "News",},{id: "projects-abstracted",
           title: 'Abstracted',
-          description: "A useful research tool hopefully free researchers from piles of google scholar alert.",
+          description: "hopefully free researchers from piles of google scholar alert.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/abstracted/";
             },},{
