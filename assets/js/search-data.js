@@ -387,10 +387,7 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-our-collaborative-work-with-prof-c-c-jay-kuo-s-group-from-usc-was-accepted-by-tcad",
-          title: 'Our collaborative work with Prof. C.-C. Jay Kuo’s group from USC was accepted...',
-          description: "",
-          section: "News",},{id: "news-with-great-honor-i-served-as-a-session-chair-at-the-icassp-2025",
+            },},{id: "news-with-great-honor-i-served-as-a-session-chair-at-the-icassp-2025",
           title: 'With great honor, I served as a session chair at the ICASSP 2025!...',
           description: "",
           section: "News",},{id: "news-topcell-is-accepted-to-dac-2026-congrats-to-zhan-song-and-the-team",
@@ -399,7 +396,15 @@ ninja.data = [{
           section: "News",},{id: "news-i-will-be-presnting-a-poster-at-nsf-workshop-on-agents-for-chip-design-automation",
           title: 'I will be presnting a poster at NSF Workshop on Agents for Chip...',
           description: "",
-          section: "News",},{
+          section: "News",},{id: "news-abstracted-is-online-feel-free-to-play-with-it",
+          title: 'Abstracted is online! Feel free to play with it.',
+          description: "",
+          section: "News",},{id: "projects-abstracted",
+          title: 'Abstracted',
+          description: "a project that redirects to another website",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/abstracted/";
+            },},{
       id: 'light-theme',
       title: 'Change theme to light',
       description: 'Change the theme of the site to Light',
