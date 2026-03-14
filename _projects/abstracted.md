@@ -2,7 +2,7 @@
 layout: page
 title: Abstracted
 description: A useful research tool hopefully free researchers from piles of google scholar alert.
-img: assets/img/simplified-icon-192.png
+img: assets/img/icon-512.png
 redirect: https://www.dailyabstracted.app
 importance: 1
 category: fun
