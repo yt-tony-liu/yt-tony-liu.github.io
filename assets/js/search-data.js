@@ -401,7 +401,7 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-abstracted",
           title: 'Abstracted',
-          description: "a project that redirects to another website",
+          description: "A useful research tool hopefully free researchers from piles of google scholar alert.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/abstracted/";
             },},{
