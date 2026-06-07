@@ -7,7 +7,7 @@ subtitle: |+
   University of Maryland, College Park
 profile:
   align: right
-  image: profile_pic.jpeg
+  image: profile_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: 
 
