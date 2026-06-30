@@ -33,10 +33,10 @@
       "endDate": "Present"
     },
     {
-      "institution": "National Yang Ming Chiao Tung University",
+      "institution": "National Chiao Tung University",
       "location": "Hsinchu, Taiwan",
       "url": "https://dee.nycu.edu.tw/?locale=en",
-      "area": "Electronics and Electrical Engineering",
+      "area": "Electrical and Computer Engineering",
       "studyType": "Bachelor of Science",
       "startDate": "2020-09",
       "endDate": "2024-06"
@@ -123,6 +123,10 @@
       "title": "Session Chair",
       "date": "2025",
       "awarder": "ICASSP (2025)"
+    },
+    {
+      "title": "Reviewer",
+      "awarder": "TODAES"
     }
   ],
   "Leadership and Extracurricular Activities": [
