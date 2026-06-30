@@ -120,13 +120,14 @@
   ],
   "Professional Service": [
     {
+      "title": "Reviewer",
+      "date": "2026",
+      "awarder": "TODAES"
+    },
+    {
       "title": "Session Chair",
       "date": "2025",
       "awarder": "ICASSP (2025)"
-    },
-    {
-      "title": "Reviewer",
-      "awarder": "TODAES"
     }
   ],
   "Leadership and Extracurricular Activities": [
