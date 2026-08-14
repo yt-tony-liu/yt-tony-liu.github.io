@@ -327,13 +327,21 @@ nav_order: 9
 
 ## 16) Local preview
 
-### Option A: Docker (usually easiest)
+### Option A: Docker (use this one)
 
 ```bash
-docker compose up
+docker compose up          # foreground, Ctrl-C to stop
+docker compose up -d       # detached, keeps running after you close the terminal
+docker compose down        # stop it
+docker compose logs -f     # tail build/serve output
 ```
 
-Then open `http://localhost:8080`.
+Then open `http://localhost:8080`. Auto-regeneration and LiveReload (port `35729`) are on, so saving
+a file rebuilds the site and refreshes the browser automatically. First start takes a minute or two
+while the image downloads; after that it's a few seconds.
+
+The container runs Ruby 3.4.2 with imagemagick and the full gem set already installed, which is why
+this is the recommended path.
 
 ### Option B: Ruby local toolchain
 
@@ -343,6 +351,34 @@ bundle exec jekyll serve
 ```
 
 Then open `http://localhost:4000`.
+
+This does **not** work out of the box on a stock Mac, for two reasons:
+
+- macOS ships system Ruby **2.6.10**, but `Gemfile.lock` requires bundler 2.6.5 — `bundle` exits with
+  `Could not find 'bundler' (2.6.5)`. You need a version manager (rbenv/asdf) and Ruby 3.3+.
+- `imagemagick` must be on `PATH` (`brew install imagemagick`) or `jekyll-imagemagick` can't generate
+  the 480/800/1400px WebP variants, so images render wrong locally.
+
+### Running more than one preview at a time
+
+The server writes `_site/` and `.jekyll-cache/` inside the repo, so **only run one preview per checkout**.
+Two Jekyll processes on the same directory will fight over those folders and produce confusing results.
+
+```bash
+docker compose ps                              # is the container already up?
+lsof -nP -iTCP:8080 -sTCP:LISTEN               # is something already on the port?
+```
+
+Also note `docker compose up` here always reuses the same container name — starting it twice won't
+double-start, but `docker compose down` from any terminal stops it for everyone.
+
+### What local preview can't catch
+
+`docker-compose.yml` sets `JEKYLL_ENV=development`, so local builds skip minification, and the deploy
+workflow's PurgeCSS step doesn't run at all. A CSS class that only ever appears in an inline `<script>`
+block can look fine locally and get purged from the deployed site. If a style vanishes only in
+production, add the class to the safelist in `purgecss.config.js`. Check the live site after deploying,
+not just localhost.
 
 ## 17) Publish workflow
 
