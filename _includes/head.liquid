@@ -21,12 +21,19 @@
   >
 {% endif %}
 
-<!-- Fonts & Icons -->
+<!-- Fonts -->
+<!--
+  Roboto is self-hosted (see _sass/_fonts.scss) rather than fetched from Google.
+  MDB sets it as the body font but ships no @font-face, so ALL text depends on it;
+  preloading starts the request during head parsing instead of waiting for main.css
+  to download and parse first, which is what left text invisible on first paint.
+-->
 <link
-  defer
-  rel="stylesheet"
-  type="text/css"
-  href="{{ site.third_party_libraries.google_fonts.url.fonts }}"
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="{{ '/assets/fonts/roboto-variable-latin.woff2' | relative_url }}"
+  crossorigin
 >
 
 <!-- Code Syntax Highlighting -->

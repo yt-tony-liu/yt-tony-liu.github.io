@@ -20,8 +20,12 @@ module Jekyll
       private
 
       def directory_files_content
-        target_path = File.join(directory, '**', '*')
-        Dir[target_path].map{|f| File.read(f) unless File.directory?(f) }.join
+        # `directory` may be a single path or a list of paths/globs. Sort for a
+        # stable digest — Dir[] ordering is not guaranteed across filesystems.
+        Array(directory).flat_map { |dir| Dir[File.join(dir, '**', '*')] }
+                        .sort
+                        .map { |f| File.read(f) unless File.directory?(f) }
+                        .join
       end
 
       def file_content
@@ -42,8 +46,10 @@ module Jekyll
       CacheDigester.new(file_name: file_name, directory: nil).digest!
     end
 
+    # main.css is compiled from assets/css/main.scss plus everything in _sass/,
+    # so the digest has to cover both — neither file exists at the emitted path.
     def bust_css_cache(file_name)
-      CacheDigester.new(file_name: file_name, directory: 'assets/_sass').digest!
+      CacheDigester.new(file_name: file_name, directory: ['_sass', 'assets/css']).digest!
     end
   end
 end

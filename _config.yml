@@ -4,7 +4,7 @@
 
 title: Yu-Tung Liu # the website title (if blank, full name will be used instead)
 first_name: Yu-Tung
-middle_name: 
+middle_name:
 last_name: Liu
 email: liuyt@umd.edu
 # contact_note: >
@@ -17,11 +17,11 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 #   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 #   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 #   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-footer_text: 
+footer_text:
 keywords: yu-tung liu, yu-tung-liu, yutung-liu, yutung liu, tony liu, jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: simplified-icon-192.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
-# icon: 
+# icon:
 url: https://yt-tony-liu.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: true # set to true if you want to display last updated in the footer
@@ -388,9 +388,8 @@ third_party_libraries:
         library: "https://cdn.jsdelivr.net/npm/echarts@{{version}}/dist/echarts.min.js"
         dark_theme: "https://cdn.jsdelivr.net/npm/echarts@{{version}}/theme/dark-fresh-cut.js"
     version: "5.5.0"
-  google_fonts:
-    url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+  # google_fonts removed: Roboto is now self-hosted (assets/fonts/, _sass/_fonts.scss).
+  # The request also pulled Roboto Slab and Material Icons, neither of which this site uses.
   highlightjs:
     integrity:
       css:
