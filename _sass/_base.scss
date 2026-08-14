@@ -245,6 +245,9 @@ ul.task-list input[type="checkbox"] {
 @media (min-width: 576px) {
   .profile {
     width: 30%;
+    // The portrait is 2:3, so a percentage width alone makes it very tall on
+    // wide screens. Cap it so the text column keeps the bulk of the container.
+    max-width: 200px;
 
     .address {
       p {
