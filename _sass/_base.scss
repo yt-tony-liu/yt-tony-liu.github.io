@@ -4,6 +4,27 @@
 
 // Typography
 
+// MDB hard-codes `body { font-family: "Roboto", sans-serif }` and ships no @font-face
+// for it. main.css is linked after MDB's stylesheet in `head.liquid`, so a plain `body`
+// selector wins on source order without needing !important.
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+// Headings in Serif. The explicit 600 is required, not cosmetic: Bootstrap sets
+// $headings-font-weight: 500, and with only 400 and 600 installed the CSS font
+// matching algorithm resolves 500 *downwards* to 400, which reads far too light at
+// display sizes. `.navbar-brand` is deliberately excluded — it is UI, not content.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "IBM Plex Serif", Georgia, serif;
+  font-weight: 600;
+}
+
 p,
 h1,
 h2,
@@ -26,6 +47,13 @@ hr {
 table {
   td,
   th {
+    // Bootstrap hard-codes `.table { color: #212529 }`, which the cells inherit, and
+    // the typography rule above only covers p/em/span/strong — not td/th. In dark mode
+    // that left news text nearly invisible until `no_defer.js` added `.table-dark`,
+    // i.e. after jQuery had loaded from the CDN. Colour the cells directly so they are
+    // right at first paint; a declaration on the cell beats the value inherited from
+    // `.table` regardless of specificity.
+    color: var(--global-text-color);
     font-size: 1rem;
     padding: 1px 1rem 1px 0;
   }

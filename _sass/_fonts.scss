@@ -1,25 +1,64 @@
-// Self-hosted Roboto.
+// Self-hosted IBM Plex — Sans for body/UI, Serif for headings.
 //
-// MDB sets `body { font-family: "Roboto", sans-serif }` but ships no @font-face of
-// its own, so every glyph on the site depends on this file. It used to come from
-// fonts.googleapis.com, which put two cold third-party handshakes (googleapis for
-// the CSS, then gstatic for the woff2) on the critical path before any text could
-// paint — `display=swap`'s block period rendered the page with invisible text.
-// Serving it from our own origin keeps the font on the same warm connection as the
-// HTML, and `_includes/head.liquid` preloads it so the request starts immediately.
+// PROTOTYPE: this replaces the previous self-hosted Roboto. See the heading rule
+// at the top of `_base.scss` and the preloads in `_includes/head.liquid`.
+// `assets/fonts/roboto-variable-latin.woff2` is still on disk if we revert.
 //
-// This is the `latin` subset (U+0000-00FF) of the variable face: one 37KB file
-// covering weights 100-900, versus ~66KB across four static weights that would
-// still synthesise the 600 and 900 used by MDB and Bootstrap. Site content is
-// pure ASCII; anything outside latin-1 falls back to a system font.
+// The reason both faces are served from our own origin is unchanged from the Roboto
+// setup: fonts.googleapis.com put two cold third-party handshakes (googleapis for the
+// CSS, then gstatic for the woff2) on the critical path before any text could paint.
+//
+// All four files are the `latin` subset (U+0000-00FF). Site content is pure ASCII;
+// anything outside latin-1 falls back to a system font.
+//
+// Sans ships as one variable face per style covering weights 100-700, which matters
+// because MDB asks for 600 and 900 — 900 is above Plex's range and gets clamped to
+// 700 rather than synthesised. Serif has NO variable face on Google Fonts, only
+// statics, so it is scoped to headings and limited to the two weights actually used.
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "IBM Plex Sans";
   font-style: normal;
-  font-weight: 100 900;
-  font-stretch: 100%; // Roboto v51's variable face carries a wdth axis; pin it to normal.
+  font-weight: 100 700;
+  font-stretch: 100%; // The variable face carries a wdth axis; pin it to normal.
   font-display: swap;
-  src: url("../fonts/roboto-variable-latin.woff2") format("woff2");
+  src: url("../fonts/ibm-plex-sans-variable-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+// Real italics rather than an oblique slant — the bibliography renders venue names
+// in <em>, so this face is on the publications page in quantity.
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 100 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-variable-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+// Serif statics. Bootstrap's $headings-font-weight is 500, which CSS weight matching
+// would resolve *downwards* to 400 — too light for a display serif — so `_base.scss`
+// sets 600 on the headings explicitly rather than relying on the fallback.
+@font-face {
+  font-family: "IBM Plex Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-serif-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "IBM Plex Serif";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-serif-600-latin.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
     U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }

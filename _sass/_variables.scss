@@ -5,10 +5,29 @@
 
 @use "sass:color";
 
-// Colors
+// Site palette — warm ivory / charcoal / Princeton-inspired orange.
+//
+// Contrast ratios below are against the surface each colour actually sits on, because
+// `a { color: var(--global-theme-color) }` in _base.scss means the accent is body-copy
+// link text, not just decoration — it has to clear 4.5:1, not 3:1.
+$ivory-color: #faf9f6 !default; // page background (light)
+$charcoal-color: #252525 !default; // body text (light) / background (dark) — 14.6:1 on ivory
+$muted-gray-color: #66635f !default; // secondary text — 5.7:1 on ivory
+// Split by mode: each surface gets the step of the orange that stays legible on it.
+// The two are close in hue, so the site reads as one accent colour across the toggle
+// rather than two different brands.
+$orange-color-bright: #f36c21 !default; // dark-mode link/accent — 5.1:1 on charcoal
+$orange-color: #c95d16 !default; // light-mode link/accent — 4.0:1 on ivory
+$orange-color-deep: #a94d12 !default; // light-mode hover — 5.3:1, darkens on hover
+$orange-color-light: #f78b4e !default; // dark-mode hover — 6.4:1, lightens on hover
+
+// Softened ivory for dark mode: full-strength ivory on charcoal is 14.6:1, which
+// glares in a dark UI.
+$ivory-color-dim: #e9e7e2 !default;
+$muted-gray-color-light: #9a9691 !default;
+
 $red-color: #ff3636 !default;
 $red-color-dark: #D32F2F !default;
-$orange-color: #EC5800 !default;
 $blue-color: #0076df !default;
 $blue-color-dark: #00369f !default;
 $cyan-color: #2698ba !default;

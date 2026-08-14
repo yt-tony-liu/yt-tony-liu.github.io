@@ -23,16 +23,27 @@
 
 <!-- Fonts -->
 <!--
-  Roboto is self-hosted (see _sass/_fonts.scss) rather than fetched from Google.
-  MDB sets it as the body font but ships no @font-face, so ALL text depends on it;
-  preloading starts the request during head parsing instead of waiting for main.css
+  IBM Plex is self-hosted (see _sass/_fonts.scss) rather than fetched from Google.
+  Preloading starts these requests during head parsing instead of waiting for main.css
   to download and parse first, which is what left text invisible on first paint.
+
+  Only the two faces that are above the fold on every page are preloaded: Sans Regular
+  (MDB sets the body font but ships no @font-face, so ALL text depends on it) and Serif
+  SemiBold (the page heading). Sans Italic and Serif Regular are left to load normally —
+  preloading a font that a given page never uses just competes for bandwidth.
 -->
 <link
   rel="preload"
   as="font"
   type="font/woff2"
-  href="{{ '/assets/fonts/roboto-variable-latin.woff2' | relative_url }}"
+  href="{{ '/assets/fonts/ibm-plex-sans-variable-latin.woff2' | relative_url }}"
+  crossorigin
+>
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="{{ '/assets/fonts/ibm-plex-serif-600-latin.woff2' | relative_url }}"
   crossorigin
 >
 
