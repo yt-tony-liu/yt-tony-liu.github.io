@@ -791,13 +791,20 @@ footer.sticky-bottom {
       }
 
       .abbr {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.25rem;
 
         abbr {
           display: inline-block;
           background-color: var(--global-theme-color);
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.25rem;
           color: var(--global-card-bg-color) !important;
+
+          // On mobile the .abbr column spans the full row width, so let the
+          // badge shrink to its label; only stretch it once the narrow
+          // .col-sm-2 gutter exists, where uniform widths line up nicely.
+          &.venue-badge {
+            width: auto;
+          }
 
           a {
             color: white;
@@ -811,6 +818,19 @@ footer.sticky-bottom {
         .award {
           color: var(--global-theme-color) !important;
           border: 1px solid var(--global-theme-color);
+        }
+
+        @media (min-width: 576px) {
+          margin-bottom: 0.5rem;
+
+          abbr {
+            margin-bottom: 0.5rem;
+
+            &.venue-badge {
+              display: block;
+              width: 100%;
+            }
+          }
         }
       }
 
