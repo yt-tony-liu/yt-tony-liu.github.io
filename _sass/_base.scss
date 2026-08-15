@@ -14,7 +14,8 @@ body {
 // Headings in Serif. The explicit 600 is required, not cosmetic: Bootstrap sets
 // $headings-font-weight: 500, and with only 400 and 600 installed the CSS font
 // matching algorithm resolves 500 *downwards* to 400, which reads far too light at
-// display sizes. `.navbar-brand` is deliberately excluded — it is UI, not content.
+// display sizes. The navbar wordmark takes the same treatment — see `.navbar-brand.title`
+// further down; the rest of the navbar stays Sans.
 h1,
 h2,
 h3,
@@ -302,6 +303,9 @@ ul.task-list input[type="checkbox"] {
 // Navbar customization
 
 .navbar {
+  // Inherited from `body` today, but stated here so the nav stays on Sans even if
+  // MDB or Bootstrap starts setting a family on `.navbar` / `.navbar-brand`.
+  font-family: "IBM Plex Sans", sans-serif;
   box-shadow: none;
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
@@ -343,6 +347,15 @@ ul.task-list input[type="checkbox"] {
 
   .navbar-brand {
     color: var(--global-text-color);
+  }
+
+  // The name is a wordmark, not a nav item: Serif ties it to the page headings and
+  // sets it apart from the Sans links beside it. 600 is the same static already
+  // fetched for h1-h6, so this costs no extra font file. `.social` is the home-page
+  // icon row under the same class — it holds no text, so it is left out.
+  .navbar-brand.title {
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-weight: 600;
   }
 
   .navbar-nav .nav-item .nav-link {
