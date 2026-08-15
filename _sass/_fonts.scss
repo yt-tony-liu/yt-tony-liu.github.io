@@ -1,8 +1,7 @@
 // Self-hosted IBM Plex — Sans for body/UI, Serif for headings.
 //
-// PROTOTYPE: this replaces the previous self-hosted Roboto. See the heading rule
+// This replaces the previous self-hosted Roboto. See the heading rule
 // at the top of `_base.scss` and the preloads in `_includes/head.liquid`.
-// `assets/fonts/roboto-variable-latin.woff2` is still on disk if we revert.
 //
 // The reason both faces are served from our own origin is unchanged from the Roboto
 // setup: fonts.googleapis.com put two cold third-party handshakes (googleapis for the

@@ -6,14 +6,8 @@
   crossorigin="anonymous"
 ></script>
 
-<!-- Bootsrap & MDB scripts -->
+<!-- Bootstrap (MDB JS dropped: nothing references it; its only behavior, waves ripples, is stripped by common.js) -->
 <script defer src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
-<script
-  defer
-  src="{{ site.third_party_libraries.mdb.url.js }}"
-  integrity="{{ site.third_party_libraries.mdb.integrity.js }}"
-  crossorigin="anonymous"
-></script>
 
 {% if page.mermaid and page.mermaid.enabled %}
   <!-- Mermaid and D3 -->

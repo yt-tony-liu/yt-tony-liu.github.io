@@ -6,6 +6,11 @@
 // Dimensions
 $max-content-width: {{ site.max_width }};
 
+// Icons sit above the fold (social row under the profile image); the FA default of
+// font-display: block hides them for up to 3s while the webfont loads.
+$fa-font-display: swap;
+
+// font-awesome/regular is not imported: no `far`/`fa-regular` icon is used anywhere on the site.
 @import
   "fonts",
   "variables",
@@ -16,6 +21,5 @@ $max-content-width: {{ site.max_width }};
   "tabs",
   "font-awesome/fontawesome",
   "font-awesome/brands",
-  "font-awesome/solid",
-  "font-awesome/regular"
+  "font-awesome/solid"
 ;

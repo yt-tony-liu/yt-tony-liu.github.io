@@ -1,14 +1,18 @@
 <!-- Metadata, OpenGraph and Schema.org -->
 {% include metadata.liquid %}
 
+<!-- jQuery is the only remaining jsDelivr fetch on plain pages (deferred, in scripts.liquid) -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
 <!-- Bootstrap & MDB -->
+<!--
+  mdb.min.css is vendored locally (instead of jsDelivr) so purgecss can strip it in CI —
+  as a remote sheet it shipped all 277KB render-blocking, and purgecss only sees
+  _site/assets/css/*.css. No integrity attribute: purgecss rewrites the file after the
+  build, so an SRI hash computed here would fail on the deployed page.
+-->
 <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url | bust_file_cache }}">
-<link
-  rel="stylesheet"
-  href="{{ site.third_party_libraries.mdb.url.css }}"
-  integrity="{{ site.third_party_libraries.mdb.integrity.css }}"
-  crossorigin="anonymous"
->
+<link rel="stylesheet" href="{{ '/assets/css/mdb.min.css' | relative_url | bust_file_cache }}">
 
 {% if page.pretty_table %}
   <!-- Bootstrap Table -->
@@ -47,14 +51,32 @@
   crossorigin
 >
 
-<!-- Code Syntax Highlighting (dark only — the light sheet is kept disabled) -->
-<link
-  defer
-  rel="stylesheet"
-  href="{{ '/assets/css/jekyll-pygments-themes-github.css' | relative_url | bust_file_cache }}"
-  media="none"
-  id="highlight_theme_light"
->
+<!--
+  Preload the LCP element: the profile image on pages with a `profile` front-matter block.
+  It lives in the body behind the blocking CSS chain, so without this the browser only
+  discovers it late. The imagesrcset loop must stay character-for-character identical to the
+  <source srcset> loop in _includes/figure.liquid (including the trailing comma), and
+  imagesizes must match the sizes capture in _layouts/about.liquid — any mismatch makes the
+  browser download a second variant.
+-->
+{% if page.profile and page.profile.image and site.imagemagick.enabled %}
+  {% assign lcp_path = page.profile.image
+    | prepend: 'assets/img/'
+    | remove: '.jpg'
+    | remove: '.jpeg'
+    | remove: '.png'
+    | remove: '.tiff'
+    | remove: '.gif'
+  %}
+  <link
+    rel="preload"
+    as="image"
+    type="image/webp"
+    imagesrcset="{% for i in site.imagemagick.widths %}{{ lcp_path | relative_url }}-{{ i }}.webp {{ i }}w,{% endfor %}"
+    imagesizes="(min-width: 576px) min(30vw, 200px), 35vw"
+    fetchpriority="high"
+  >
+{% endif %}
 
 {% if page.toc and page.toc.sidebar %}
   <!-- Sidebar Table of Contents -->
@@ -75,15 +97,28 @@
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
 <!-- Dark Mode -->
-<script src="{{ '/assets/js/theme.js' | relative_url | bust_file_cache }}"></script>
+<!--
+  The site is dark-mode only: there is no toggle and no light palette. `data-theme="dark"`
+  is set statically on <html> in _layouts/default.liquid, so nothing has to run before
+  first paint. This inline script survives only to expose determineComputedTheme(), which
+  the per-page setup scripts — mermaid-setup.js, echarts-setup.js, vega-setup.js,
+  diff2html-setup.js, no_defer.js and common.js — all call to pick their own dark variants.
+  Inlined (rather than a synchronous .js fetch) to keep it off the network critical path.
+-->
+<script>
+  let determineComputedTheme = () => 'dark';
+</script>
 {% if site.enable_darkmode %}
+  <!-- Dark syntax highlighting, loaded non-blocking via the print-media swap. -->
   <link
-    defer
     rel="stylesheet"
     href="{{ '/assets/css/jekyll-pygments-themes-native.css' | relative_url | bust_file_cache }}"
-    media=""
-    id="highlight_theme_dark"
+    media="print"
+    onload="this.media='all'"
   >
+  <noscript>
+    <link rel="stylesheet" href="{{ '/assets/css/jekyll-pygments-themes-native.css' | relative_url | bust_file_cache }}">
+  </noscript>
 {% endif %}
 
 {% if page.map %}
