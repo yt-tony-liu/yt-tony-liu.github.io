@@ -4,89 +4,18 @@
 
 @use "sass:color";
 
+// The site is dark-mode only — there is no toggle and no light palette. `data-theme="dark"`
+// is still set statically on <html> (see _layouts/default.liquid) because a few templates
+// and third-party widgets key off it, but every variable below lives on :root so the page
+// renders correctly even without it.
 :root {
-  color-scheme: light;
-  --global-bg-color: #{$ivory-color};
-  --global-code-bg-color: rgba(37, 37, 37, 0.045); // warm charcoal wash, not the old purple tint
-  --global-text-color: #{$charcoal-color};
-  --global-text-color-light: #{$muted-gray-color};
-  --global-theme-color: #{$orange-color};
-  --global-hover-color: #{$orange-color-deep};
-  --global-hover-text-color: #{$ivory-color};
-  --global-footer-bg-color: #{$charcoal-color};
-  --global-footer-text-color: #{$muted-gray-color-light};
-  --global-footer-link-color: #{$ivory-color};
-  --global-distill-app-color: #{$muted-gray-color};
-  // Warm divider: pure black at 10% greys the ivory out and reads cold against it.
-  --global-divider-color: rgba(37, 37, 37, 0.12);
-  // Cards lift off the ivory by going lighter, so this stays white rather than ivory.
-  --global-card-bg-color: #{$white-color};
-  --global-highlight-color: #{$red-color-dark};
-  --global-back-to-top-bg-color: rgba(
-    #{color.channel($charcoal-color, "red", $space: rgb)},
-    #{color.channel($charcoal-color, "green", $space: rgb)},
-    #{color.channel($charcoal-color, "blue", $space: rgb)},
-    0.45
-  );
-  --global-back-to-top-text-color: #{$ivory-color};
-  --global-newsletter-bg-color: #{$ivory-color};
-  --global-newsletter-text-color: #{$charcoal-color};
-
-  --global-tip-block: #42b983;
-  --global-tip-block-bg: #e2f5ec;
-  --global-tip-block-text: #215d42;
-  --global-tip-block-title: #359469;
-  --global-warning-block: #e7c000;
-  --global-warning-block-bg: #fff8d8;
-  --global-warning-block-text: #6b5900;
-  --global-warning-block-title: #b29400;
-  --global-danger-block: #c00;
-  --global-danger-block-bg: #ffe0e0;
-  --global-danger-block-text: #600;
-  --global-danger-block-title: #c00;
-
-  #light-toggle-system {
-    padding-left: 10px;
-    padding-top: 12px;
-    display: block;
-  }
-
-  #light-toggle-dark {
-    display: none;
-  }
-
-  #light-toggle-light {
-    display: none;
-  }
-
-  .only-light {
-    display: block;
-  }
-
-  .only-dark {
-    display: none;
-  }
-
-  #back-to-top {
-    color: var(--global-back-to-top-text-color);
-    background: var(--global-back-to-top-bg-color);
-    bottom: $back-to-top-bottom;
-    right: $back-to-top-right;
-    height: $back-to-top-height;
-    width: $back-to-top-width;
-    z-index: $back-to-top-z-index;
-  }
-}
-
-html[data-theme="dark"] {
   color-scheme: dark;
   --global-bg-color: #{$charcoal-color};
   --global-code-bg-color: rgba(250, 249, 246, 0.06);
   --global-text-color: #{$ivory-color-dim};
   --global-text-color-light: #{$muted-gray-color-light};
   // The bright orange the palette is built around lands here: 5.1:1 on charcoal, where
-  // it passes AA comfortably. On ivory it is only 2.9:1, which is why light mode uses
-  // the darker step instead.
+  // it passes AA comfortably.
   --global-theme-color: #{$orange-color-bright};
   --global-hover-color: #{$orange-color-light};
   --global-hover-text-color: #{$charcoal-color};
@@ -98,6 +27,7 @@ html[data-theme="dark"] {
   --global-distill-app-color: #{$ivory-color-dim};
   --global-divider-color: rgba(250, 249, 246, 0.14);
   --global-card-bg-color: #2e2d2b; // warm lift off the charcoal, not the old blue-grey
+  --global-highlight-color: #{$red-color-dark};
   --global-back-to-top-bg-color: rgba(
     #{color.channel($ivory-color, "red", $space: rgb)},
     #{color.channel($ivory-color, "green", $space: rgb)},
@@ -128,41 +58,14 @@ html[data-theme="dark"] {
   .only-dark {
     display: block;
   }
-}
-
-html[data-theme-setting="dark"] {
-  #light-toggle-system {
-    display: none;
-  }
-
-  #light-toggle-dark {
-    padding-left: 10px;
-    padding-top: 12px;
-    display: block;
-  }
-
-  #light-toggle-light {
-    display: none;
-  }
 
   #back-to-top {
     color: var(--global-back-to-top-text-color);
     background: var(--global-back-to-top-bg-color);
-  }
-}
-
-html[data-theme-setting="light"] {
-  #light-toggle-system {
-    display: none;
-  }
-
-  #light-toggle-dark {
-    display: none;
-  }
-
-  #light-toggle-light {
-    padding-left: 10px;
-    padding-top: 12px;
-    display: block;
+    bottom: $back-to-top-bottom;
+    right: $back-to-top-right;
+    height: $back-to-top-height;
+    width: $back-to-top-width;
+    z-index: $back-to-top-z-index;
   }
 }

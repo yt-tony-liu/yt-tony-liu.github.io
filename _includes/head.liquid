@@ -47,12 +47,12 @@
   crossorigin
 >
 
-<!-- Code Syntax Highlighting -->
+<!-- Code Syntax Highlighting (dark only — the light sheet is kept disabled) -->
 <link
   defer
   rel="stylesheet"
   href="{{ '/assets/css/jekyll-pygments-themes-github.css' | relative_url | bust_file_cache }}"
-  media=""
+  media="none"
   id="highlight_theme_light"
 >
 
@@ -81,12 +81,9 @@
     defer
     rel="stylesheet"
     href="{{ '/assets/css/jekyll-pygments-themes-native.css' | relative_url | bust_file_cache }}"
-    media="none"
+    media=""
     id="highlight_theme_dark"
   >
-  <script>
-    initTheme();
-  </script>
 {% endif %}
 
 {% if page.map %}
